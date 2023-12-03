@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+
+  mysql:
+    image: 'mysql:8.0'
+    working_dir: /application
+    volumes:
+      - './src:/application'
+      - './dbdata:/var/lib/mysql'
+      - './scripts/init.sql:/docker-entrypoint-initdb.d/1.sql'
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=app_database
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+    ports:
+      - '3002:3306'
+  phpmyadmin:
+    image: 'phpmyadmin/phpmyadmin'
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+      PMA_USER: "admin"
+      PMA_PASSWORD: "admin"
+    depends_on:
+      - mysql
+    ports:
+      - '8080:80'
