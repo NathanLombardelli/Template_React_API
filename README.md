@@ -13,3 +13,4 @@ Un template React avec une API Express lié à une BD local Docker MySQL.
 user : admin <br>
 mdp : admin <br>
 url : localhost:3002
+DB Name : app_database

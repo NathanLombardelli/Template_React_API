@@ -6,9 +6,8 @@ services:
     image: 'mysql:8.0'
     working_dir: /application
     volumes:
-      - './src:/application'
-      - './dbdata:/var/lib/mysql'
-      - './scripts/init.sql:/docker-entrypoint-initdb.d/1.sql'
+      - ./dbdata:/var/lib/mysql
+      - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       - MYSQL_ROOT_PASSWORD=admin
       - MYSQL_DATABASE=app_database
