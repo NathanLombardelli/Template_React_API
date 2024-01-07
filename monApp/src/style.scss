@@ -1,2 +1,23 @@
-@import "scss/home";
-@import "scss/users";
+// variables
+
+:root{
+  --bg-color: #1f242d;
+  --second-bg-color: #323946;
+  --text-color: #fff;
+  --main-color: #0ef;
+}
+
+// General style
+
+*{
+  background-color: var(--bg-color);
+  color: var(--main-color);
+}
+
+
+// Pages styles
+
+@import "pages/home/home";
+@import "pages/users/users";
+@import "pages/register/register";
+@import "pages/login/login";

@@ -14,3 +14,5 @@ user : admin <br>
 mdp : admin <br>
 url : localhost:3002
 DB Name : app_database
+### Change init.sql
+Delete dbdata folder before docker compose up.

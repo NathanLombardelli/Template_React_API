@@ -1,4 +1,4 @@
-import {Nav} from "../assets/Nav.tsx";
+import {Nav} from "../../assets/Nav.tsx";
 
 export function Home() {
     return (

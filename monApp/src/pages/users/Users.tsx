@@ -1,5 +1,5 @@
 import {ReactNode, useEffect, useState} from "react";
-import {Nav} from "../assets/Nav.tsx";
+import {Nav} from "../../assets/Nav.tsx";
 interface User {
     /** id user */
     user_id: number,
