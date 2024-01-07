@@ -1,5 +1,6 @@
 import {ReactNode, useEffect, useState} from "react";
 import {Nav} from "../../assets/Nav.tsx";
+
 interface User {
     /** id user */
     user_id: number,
@@ -10,12 +11,16 @@ interface User {
 
 }
 
+const url = import.meta.env.VITE_API_URL;
+
 export const Users = () => {
 
     const [users, setUsers] = useState([]);
 
+    console.log(url);
+
     useEffect(() => {
-        fetch('http://localhost:8081/users')
+        fetch(url +'/users')
             .then(res => res.json())
             .then(datas => setUsers(datas));
     }, []);
